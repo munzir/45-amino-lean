@@ -16,6 +16,7 @@
 # include
 !/include/
 /include/*
+!/include/amino.h
 !/include/amino/
 /include/amino/*
 !/include/amino/mem.h
