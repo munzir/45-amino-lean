@@ -241,16 +241,8 @@ char* aa_mem_region_printf(aa_mem_region_t *reg, const char *fmt, ... ) {
 
 // Declare the thread-local variable
 
-#ifdef HAVE_THREADS_H
 // First, try the C11 standard
 static _Thread_local aa_mem_region_t *aa_mem_region_local = NULL;
-#elif defined TLS
-// Next, try some Autoconf magic
-static TLS aa_mem_region_t *aa_mem_region_local = NULL;
-#else
-// Otherwise, pray this works...
-static __thread aa_mem_region_t *aa_mem_region_local = NULL;
-#endif
 
 aa_mem_region_t *aa_mem_region_local_get(void) {
     if( NULL == aa_mem_region_local ) {
