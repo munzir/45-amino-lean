@@ -1,0 +1,64 @@
+mem.c #m
+-----
+aa_mem_region_printf
+aa_mem_region_ptr
+aa_mem_region_release
+aa_mem_region_init
+aa_mem_region_tmpalloc
+aa_mem_region_alloc
+aa_mem_region_freesize
+aa_mem_region_destroy
+aa_mem_region_t
+aa_fset
+aa_fcpy
+AA_NEW_AR
+AA_NEW0_AR
+AA_NEW0
+aa_free_if_valid
+aa_fzero
+
+time.c
+------
+aa_tm_future
+aa_tm_make
+aa_tm_now()
+aa_tm_sec2timespec
+aa_tm_sub()
+
+tf.c
+----
+aa_tf_quat2rotmat
+aa_tf_rotmat2quat
+  depends on aa_tf_qnormalize which is a fortran subroutine defined in tff.F90
+  BUT only somatic_transform_ functions use it, and they are not used by any of
+  our codes so we will comment things out from somatic to get rid of these
+  amino functions
+
+la.c
+----
+aa_la_vadd
+
+debug.c
+-------
+aa_hard_assert
+aa_dump_vec
+
+validate.c
+----------
+aa_valid_v
+
+math.h #m
+------
+AA_MAX
+aa_fdeadzone
+
+amino.h
+-------
+AA_API
+AA_DEPRECATED
+
+endconv.h
+---------
+aa_endconv_ld_le_i32()
+aa_endconv_ld_le_i16()
+aa_endconv_st_le_u32()

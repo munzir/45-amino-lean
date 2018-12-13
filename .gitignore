@@ -11,7 +11,7 @@
 !CMakeLists.txt
 
 # Minimum needs list
-MINIMUM_NEEDS
+!MINIMUM_NEEDS
 
 # include
 !/include/
