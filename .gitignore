@@ -1,0 +1,28 @@
+# Exclude all files/directories except the ones I want
+/*
+
+# .gitignore
+!.gitignore
+
+# Readme
+!README.md
+
+# CMakelists
+!CMakeLists.txt
+
+# Minimum needs list
+MINIMUM_NEEDS
+
+# include
+!/include/
+/include/*
+!/include/amino/
+/include/amino/*
+!/include/amino/mem.h
+!/include/amino/math.h
+
+# src
+!/src/
+/src/*
+!/src/mem.c
+!/src/math.c
