@@ -42,5 +42,6 @@ add_library(amino SHARED ${main_source})
 install(TARGETS amino DESTINATION /usr/local/lib)
 FILE(GLOB headers "include/amino/*.h" "include/amino/*.hpp")
 install(FILES ${headers} DESTINATION /usr/local/include/amino)
+install(FILES "include/amino.h" DESTINATION /usr/local/include)
 
 message(STATUS " ")
