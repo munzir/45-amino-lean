@@ -47,10 +47,9 @@ validate.c #
 ----------
 aa_valid_v
 
-math.h #
+math.h 
 ------
 AA_MAX
-aa_fdeadzone
 
 amino.h #
 -------

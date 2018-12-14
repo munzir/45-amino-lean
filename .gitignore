@@ -30,6 +30,7 @@
 !/src/
 /src/*
 !/src/debug.c
+!/src/la.c
 !/src/math.c
 !/src/mem.c
 !/src/time.c
