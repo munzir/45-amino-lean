@@ -72,4 +72,18 @@ static inline int64_t aa_imodulo64( int64_t a, int64_t b ) {
  */
 AA_API void aa_la_vadd( size_t n, const double *x, const double *y, double *r );
 
+/** Set diagonal of A to x. */
+static inline void
+aa_la_diag( size_t n, double *A, double x ) {
+    for( size_t i = 0; i < n; i ++ )
+        A[i*n+i] = x;
+}
+
+/** Set A to the identity matrix */
+static inline void
+aa_la_ident( size_t n, double *A ) {
+    aa_fset(A, 0, n*n);
+    aa_la_diag(n,A,1.0);
+}
+
 #endif //AA_MATH_H
