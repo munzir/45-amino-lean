@@ -1,5 +1,3 @@
-/* -*- mode: C; c-basic-offset: 4 -*- */
-/* ex: set shiftwidth=4 tabstop=4 expandtab: */
 /*
  * Copyright (c) 2010-2011, Georgia Tech Research Corporation
  * All rights reserved.
@@ -39,32 +37,20 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef AA_MATH_H
-#define AA_MATH_H
 
-/// maximum of a and b
-#define AA_MAX(a,b) \
-    ({ const typeof(a) aa_$_max_a = (a); \
-       const typeof(b) aa_$_max_b = (b); \
-       (aa_$_max_a > aa_$_max_b) ? aa_$_max_a : aa_$_max_b; })
+#ifndef AMINO_DEBUG_H
+#define AMINO_DEBUG_H
 
-/// Fortran modulo, Ada mod
-#define AA_MODULO(a,b) (((a) % (b)) + (b)) % (b);
+/**
+ * \file amino/debug.h
+ */
 
-/// Fortran modulo, Ada mod
-static inline int aa_imodulo( int a, int b ) {
-    //return ((a % b) + b) % b;
-    return AA_MODULO(a,b);
-}
+/// bail out if test is false
+AA_API void
+aa_hard_assert(int test, const char fmt[], ...);
 
-/// Fortran modulo, Ada mod
-static inline long aa_lmodulo( long a, long b ) {
-    return AA_MODULO(a,b);
-}
-
-/// Fortran modulo, Ada mod
-static inline int64_t aa_imodulo64( int64_t a, int64_t b ) {
-    return AA_MODULO(a,b);
-}
+/// print a vec to file
+AA_API void
+aa_dump_vec( FILE *file, double *v, size_t n );
 
 #endif //AA_MATH_H

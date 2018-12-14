@@ -1,5 +1,3 @@
-/* -*- mode: C; c-basic-offset: 4 -*- */
-/* ex: set shiftwidth=4 tabstop=4 expandtab: */
 /*
  * Copyright (c) 2010-2011, Georgia Tech Research Corporation
  * All rights reserved.
@@ -39,32 +37,25 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef AA_MATH_H
-#define AA_MATH_H
 
-/// maximum of a and b
-#define AA_MAX(a,b) \
-    ({ const typeof(a) aa_$_max_a = (a); \
-       const typeof(b) aa_$_max_b = (b); \
-       (aa_$_max_a > aa_$_max_b) ? aa_$_max_a : aa_$_max_b; })
+#include "amino.h"
+#include <stdarg.h>
 
-/// Fortran modulo, Ada mod
-#define AA_MODULO(a,b) (((a) % (b)) + (b)) % (b);
-
-/// Fortran modulo, Ada mod
-static inline int aa_imodulo( int a, int b ) {
-    //return ((a % b) + b) % b;
-    return AA_MODULO(a,b);
+AA_API void
+aa_dump_vec( FILE *file, double *v, size_t n ) {
+    for( size_t i = 0; i < n-1; i ++ )
+        fprintf(file, "%f\t", v[i] );
+    fprintf(file, "%f\n", v[n-1]);
 }
 
-/// Fortran modulo, Ada mod
-static inline long aa_lmodulo( long a, long b ) {
-    return AA_MODULO(a,b);
+void aa_hard_assert( int test, const char fmt[], ... ) {
+    if( ! test ) {
+        va_list argp;
+        va_start( argp, fmt );
+        fprintf(stderr, "ERROR: ");
+        vfprintf( stderr, fmt, argp );
+        va_end( argp );
+        abort();
+        exit(EXIT_FAILURE);
+    }
 }
-
-/// Fortran modulo, Ada mod
-static inline int64_t aa_imodulo64( int64_t a, int64_t b ) {
-    return AA_MODULO(a,b);
-}
-
-#endif //AA_MATH_H

@@ -26,12 +26,11 @@ link_libraries(stdc++)
 # Build the codebase library and the executables
 
 # Include the project files
-include_directories(include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/amino)
 
 # Collect the source, script and fortran files
 file(GLOB main_source "src/*.c" "src/*.cpp")
+#set_source_files_properties("src/math.c" PROPERTIES LANGUAGE CXX)
 file(GLOB scripts_source "exe/*.c" "exe/*.cpp")
 list(SORT scripts_source)
 

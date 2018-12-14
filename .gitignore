@@ -19,11 +19,18 @@
 !/include/amino.h
 !/include/amino/
 /include/amino/*
-!/include/amino/mem.h
+!/include/amino/debug.h
+!/include/amino/endconv.h
 !/include/amino/math.h
+!/include/amino/mem.h
+!/include/amino/time.h
+!/include/amino/validate.h
 
 # src
 !/src/
 /src/*
-!/src/mem.c
+!/src/debug.c
 !/src/math.c
+!/src/mem.c
+!/src/time.c
+!/src/validate.c

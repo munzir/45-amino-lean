@@ -1,5 +1,3 @@
-/* -*- mode: C; c-basic-offset: 4; -*- */
-/* ex: set shiftwidth=4 tabstop=4 expandtab: */
 /*
  * Copyright (c) 2010-2011, Georgia Tech Research Corporation
  * All rights reserved.
@@ -183,14 +181,14 @@
 //#include "amino/tf.h"
 //#include "amino/lapack.h"
 //#include "amino/clapack.h"
-//#include "amino/time.h"
-//#include "amino/debug.h"
+#include "amino/time.h"
+#include "amino/debug.h"
 //#include "amino/plot.h"
 //#include "amino/kin.h"
 //#include "amino/type.h"
-//#include "amino/endconv.h"
+#include "amino/endconv.h"
 //#include "amino/unit.h"
-//#include "amino/validate.h"
+#include "amino/validate.h"
 //#include "amino/io.h"
 //#include "amino/cv.h"
 

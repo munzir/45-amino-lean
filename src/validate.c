@@ -1,5 +1,3 @@
-/* -*- mode: C; c-basic-offset: 4 -*- */
-/* ex: set shiftwidth=4 tabstop=4 expandtab: */
 /*
  * Copyright (c) 2010-2011, Georgia Tech Research Corporation
  * All rights reserved.
@@ -39,32 +37,24 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef AA_MATH_H
-#define AA_MATH_H
 
-/// maximum of a and b
-#define AA_MAX(a,b) \
-    ({ const typeof(a) aa_$_max_a = (a); \
-       const typeof(b) aa_$_max_b = (b); \
-       (aa_$_max_a > aa_$_max_b) ? aa_$_max_a : aa_$_max_b; })
+#include "amino.h"
 
-/// Fortran modulo, Ada mod
-#define AA_MODULO(a,b) (((a) % (b)) + (b)) % (b);
-
-/// Fortran modulo, Ada mod
-static inline int aa_imodulo( int a, int b ) {
-    //return ((a % b) + b) % b;
-    return AA_MODULO(a,b);
+AA_API int aa_valid_v( double *values, size_t n, double *min, double *max,
+                       size_t n_desired) {
+    if( n != n_desired ) {
+        return -1;
+    }
+    if( min || max ) {
+        for( int i = 0; i < (int)n; i ++) {
+            if( min && min[i] > values[i] ) {
+                return i+1;
+            }
+            if( max && max[i] < values[i] ) {
+                return i+1;
+            }
+        }
+    }
+    return 0;
 }
 
-/// Fortran modulo, Ada mod
-static inline long aa_lmodulo( long a, long b ) {
-    return AA_MODULO(a,b);
-}
-
-/// Fortran modulo, Ada mod
-static inline int64_t aa_imodulo64( int64_t a, int64_t b ) {
-    return AA_MODULO(a,b);
-}
-
-#endif //AA_MATH_H
