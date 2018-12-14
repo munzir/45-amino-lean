@@ -49,3 +49,35 @@ void aa_la_vadd( size_t n, const double *x, const double *y, double *r ) {
         r[i] = x[i] + y[i];
     }
 }
+
+int aa_la_inv( size_t n, double *A ) {
+    const int mi = (int) n;
+    const int ni = (int) n;
+    int info;
+
+    int *ipiv = (int*)
+        aa_mem_region_local_alloc(sizeof(int)*n);
+
+    // LU-factor
+    info = aa_cla_dgetrf( mi, ni, A, mi, ipiv );
+
+    int lwork = -1;
+    while(1) {
+        double *work = (double*)
+            aa_mem_region_local_tmpalloc( sizeof(double)*
+                                      (size_t)(lwork < 0 ? 1 : lwork) );
+        aa_cla_dgetri( ni, A, mi, ipiv, work, lwork );
+        if( lwork > 0 ) break;
+        assert( -1 == lwork );
+        lwork = (int)work[0];
+    }
+
+    aa_mem_region_local_pop(ipiv);
+
+    return info;
+}
+
+int aa_la_inv_( int *n, double *A ) {
+    size_t ns = (size_t)*n;
+    return aa_la_inv(ns,A);
+}
