@@ -1,4 +1,4 @@
-mem.c #m
+mem.c #
 -----
 aa_mem_region_printf
 aa_mem_region_ptr
@@ -17,7 +17,7 @@ AA_NEW0
 aa_free_if_valid
 aa_fzero
 
-time.c
+time.c #
 ------
 aa_tm_future
 aa_tm_make
@@ -38,26 +38,26 @@ la.c
 ----
 aa_la_vadd
 
-debug.c
+debug.c #
 -------
 aa_hard_assert
 aa_dump_vec
 
-validate.c
+validate.c #
 ----------
 aa_valid_v
 
-math.h #m
+math.h #
 ------
 AA_MAX
 aa_fdeadzone
 
-amino.h
+amino.h #
 -------
 AA_API
 AA_DEPRECATED
 
-endconv.h
+endconv.h #
 ---------
 aa_endconv_ld_le_i32()
 aa_endconv_ld_le_i16()
