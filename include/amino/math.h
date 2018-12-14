@@ -67,4 +67,9 @@ static inline int64_t aa_imodulo64( int64_t a, int64_t b ) {
     return AA_MODULO(a,b);
 }
 
+/** Elementwise addition.
+ * \f[ r_i \leftarrow x_i + y_i \f]
+ */
+AA_API void aa_la_vadd( size_t n, const double *x, const double *y, double *r );
+
 #endif //AA_MATH_H
