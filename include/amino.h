@@ -180,7 +180,7 @@
 //#include "amino/la.h"
 //#include "amino/tf.h"
 //#include "amino/lapack.h"
-//#include "amino/clapack.h"
+#include "amino/clapack.h"
 #include "amino/time.h"
 #include "amino/debug.h"
 //#include "amino/plot.h"

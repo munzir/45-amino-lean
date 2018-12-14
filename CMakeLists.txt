@@ -20,7 +20,7 @@ endif()
 # ================================================================================================
 # Include and link to libraries
 
-link_libraries(stdc++)
+link_libraries(stdc++ lapack)
 
 # ================================================================================================
 # Build the codebase library and the executables

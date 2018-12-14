@@ -85,5 +85,14 @@ aa_la_ident( size_t n, double *A ) {
     aa_fset(A, 0, n*n);
     aa_la_diag(n,A,1.0);
 }
+/** Inverse of A.
+ *
+ * \f[ A \leftarrow A^{-1} \f]
+ *
+ * \param A \f$A \in \Re^n \times \Re^n\f$, column major
+ * \param n rows and columns
+ */
+AA_API int aa_la_inv( size_t n, double *A );
 
+int aa_la_inv_( int *n, double *A );
 #endif //AA_MATH_H
