@@ -27,5 +27,6 @@ and scroll through the list to see which ones are the latest for your distro and
     cd 45-amino-lean
     mkdir build
     cd build
+    cmake ..
     make
     sudo make install
