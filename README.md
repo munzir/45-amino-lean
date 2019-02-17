@@ -10,7 +10,7 @@ simplicity.
 
 - `libblas-dev`, `liblapack-dev`
 
-    sudo apt install libblas-dev liblapack-dev
+      sudo apt install libblas-dev liblapack-dev
 
 - `gfortran`
 
