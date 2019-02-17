@@ -8,7 +8,7 @@ simplicity.
 
 ## Dependencies
 
-- libblas-dev`, `liblapack-dev`,
+- `libblas-dev`, `liblapack-dev`
 
     sudo apt install libblas-dev liblapack-dev
 
