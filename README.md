@@ -32,6 +32,7 @@ and scroll through the list to see which ones are the latest for your distro and
     cd build
     cmake ..
     sudo make install
+    sudo ldconfig
 
 ## Uninstall
  To remove system files created by the installation of this repo.
